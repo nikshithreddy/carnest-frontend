@@ -1,6 +1,5 @@
 import './App.css'
-import {Router, Routes, Route} from 'react-router-dom'
-import Home from './pages/Home';
+import {Router, Routes, Route, Navigate} from 'react-router-dom'
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Messages from './pages/Messages';
@@ -20,13 +19,13 @@ function App() {
     <>
       <Navbar />
       <Routes>
-          <Route path= "/"  element={<Home/>}/>
           <Route path= "/Login"  element={<Login/>}/>
           <Route path= "/Signup"  element={<Signup/>}/>
           <Route path= "/Search"  element={<Search/>}/>
           <Route path= "/PostRide"  element={<PostRide/>}/>
           <Route path= "/YourRides"  element={<YourRides/>}/>
           <Route path= "/Messages"  element={<Messages/>}/>
+          <Route path="/" element={<Navigate replace to="/Search" />} />
         </Routes>
   </>
   )
